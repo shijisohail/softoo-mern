@@ -20,13 +20,14 @@ const themeLight = createTheme({
   
   const themeDark = createTheme({
     palette: {
+      
       background: {
         default: "#141d2b"
       },
       text: {
-        primary: "#9fef00",
-        secondary:"#9fef00"
-      },
+        primary: "#ffffff",
+        secondary:"#a4b1cd",
+      }
       
     }
   });
@@ -38,18 +39,18 @@ const App = () =>{
         <ThemeProvider theme={light ? themeLight : themeDark}>
 
         <CssBaseline/>
-        <AppBar position="relative">
+        <AppBar position="relative" sx={{ bgcolor: "#111927" }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
-            <WorkIcon/>
+            <WorkIcon  sx={{ color: "#9fef00" }}/>
             <Typography variant="h6">Job Postings</Typography>
-            <Button variant = "contained" color = "secondary" onClick={() => setLight((prev) => !prev)}>Toggle Theme</Button>
+            <Button variant = "outlined" sx={{ bgcolor: "#9fef00" }} onClick={() => setLight((prev) => !prev)}>Toggle Theme</Button>
 
         </Toolbar>
         </AppBar>
         <main>
             <div>
                 <Container maxWidth = "sm">
-                    <Typography variant="h2"align="center" color="textPrimary" gutterBottom >
+                    <Typography variant="h2"align="center" color="textPrimary" sx={{fontWeight: 'bold'}} gutterBottom >
                     Job Posting
                     </Typography>
                     <Typography variant="h6" align="center" color="textSecondary" paragraph>
@@ -58,6 +59,20 @@ const App = () =>{
                     sit fugit debitis voluptate minus ex eveniet neque nemo magnam. Odio, 
                     delectus!
                     </Typography>
+                    <div>
+                      <Grid container spacing={2} justifyContent="center">
+                        <Grid item>
+                          <Button variant ="contained" sx={{ bgcolor: "#9fef00" }}>
+                            See Jobs
+                          </Button>
+                        </Grid>
+                        <Grid item>
+                          <Button variant ="outlined" sx={{ bgcolor: "#9fef00" }}>
+                            See Applied Jobs
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </div>
                 </Container>
             </div>
         </main>
