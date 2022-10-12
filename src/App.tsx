@@ -156,10 +156,10 @@ const App = () =>{
                     />
                     <CardContent sx={{flexGrow:1}}>
                       <Typography gutterBottom variant="h5">
-                      Title Card
+                      Job Title
                       </Typography>
                       <Typography variant="h6" align="center" color="textSecondary">
-                        This is a line Displaying Media card
+                        Job Description for Finders
                       </Typography>
                     </CardContent>
                     <CardActions>
@@ -174,10 +174,10 @@ const App = () =>{
         </main>
         <Container sx={{borderTop: 1  }}>
         <footer>
-          <Typography variant="h6" align="center" gutterBottom >
+          <Typography variant="h6" color ="textSecondary" align="center" gutterBottom >
          Softoo Bootcamp Organized by P@SHA & PSEB via TECHLIFT
           </Typography>
-          <Typography variant="caption" align="center" gutterBottom>
+          <Typography variant="caption" color ="textSecondary" sx={{display:"flex"}} align="center" marginLeft={"500px"} gutterBottom>
           ©All Rights Reserved to Sharjeel
           </Typography>
         </footer>
