@@ -1,7 +1,6 @@
 import React from "react";
 import { AppBar,Toolbar,Typography } from "@mui/material"; 
 import WorkIcon from '@mui/icons-material/Work';
-
 const Navbar=()=>{
     return(
         <AppBar position="relative" sx={{ bgcolor: "#111927" }}>
