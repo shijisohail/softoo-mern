@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import {
   BrowserRouter as Router,
@@ -17,13 +17,16 @@ import SignUp from "./components/signup";
 const App = () =>{
 
     return(
-        <>
-        <Navbar/>
-        <JobsPage/>
-        {/* <SignUp/>
-        <SignIn/> */}
+    <Router>
+      <Navbar />
+      <Routes>
+            <Route path="/"  element={<JobsPage/>} />,
+          </Routes>
+          <Routes>
+            <Route path="/signup"  element={<SignUp />} />,
+          </Routes>
 
-        </>
+    </Router>
     );
 }
 export default App;
