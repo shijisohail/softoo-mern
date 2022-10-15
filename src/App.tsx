@@ -21,8 +21,7 @@ const App = () =>{
       <Navbar />
       <Routes>
             <Route path="/"  element={<JobsPage/>} />,
-          </Routes>
-          <Routes>
+          
             <Route path="/signup"  element={<SignUp />} />,
           </Routes>
 
