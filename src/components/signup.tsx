@@ -1,17 +1,9 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import{Avatar,Button,CssBaseline,TextField,FormControlLabel,Checkbox,Link,Grid,Box,Typography,Container} from'@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import {makeStyles} from '@mui/material';
+import {useForm,Controller} from 'react-hook-form'
 
 function Copyright(props: any) {
   return (
@@ -28,6 +20,7 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
+
 export default function SignUp() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,10 +30,11 @@ export default function SignUp() {
       password: data.get('password'),
     });
   };
-
+  
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+    <ThemeProvider theme={theme} >
+      <Container component="main" maxWidth="xs"  sx={{borderRadius:"10px" ,':hover': {  boxShadow: 20}}}>
+      
         <CssBaseline />
         <Box
           sx={{
@@ -50,13 +44,15 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' ,marginTop:"50px"}}>
+           
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3,marginBottom:"20px" }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -67,6 +63,7 @@ export default function SignUp() {
                   id="firstName"
                   label="First Name"
                   autoFocus
+              
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -124,7 +121,7 @@ export default function SignUp() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
+        <Copyright sx={{ mt: 5 ,marginBottom:"50px"}} />
       </Container>
     </ThemeProvider>
   );
